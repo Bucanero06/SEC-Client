@@ -29,17 +29,18 @@ _BASE_URL_XBRL_COMPANY_CONCEPTS = f"https://{HOST_DATA_SEC}/api/xbrl/companyconc
 _BASE_URL_XBRL_COMPANY_FACTS = f"https://{HOST_DATA_SEC}/api/xbrl/companyfacts"
 _BASE_URL_XBRL_FRAMES = f"https://{HOST_DATA_SEC}/api/xbrl/frames"
 # _URLs_
+SEC_EDGAR_SEARCH_API_ENDPOINT = "https://efts.sec.gov/LATEST/search-index"
+# 
 URL_PAGINATED_SUBMISSIONS = f"{_BASE_URL_SUBMISSIONS}/{{paginated_file_name}}"
 URL_SUBMISSIONS = f"{_BASE_URL_SUBMISSIONS}/CIK{{cik}}.json"
-
+# 
 URL_XBRL_COMPANY_CONCEPTS = f"{_BASE_URL_XBRL_COMPANY_CONCEPTS}/CIK{{cik}}/{{taxonomy}}/{{tag}}.json"
 URL_XBRL_COMPANY_FACTS = f"{_BASE_URL_XBRL_COMPANY_FACTS}/CIK{{cik}}.json"
 URL_XBRL_FRAMES = f"{_BASE_URL_XBRL_FRAMES}/{{taxonomy}}/{{tag}}/{{unit}}/{{period}}.json"
-
+# 
 URL_CIK_MAPPING = f"https://{HOST_WWW_SEC}/files/company_tickers_exchange.json"
 URL_FILING = (f"https://{HOST_WWW_SEC}/Archives/edgar/data/{{cik}}/{{acc_num_no_dash}}/{{document}}")
 URL_XBRL_COMPANY_FACTS_ZIP = f"https://{HOST_WWW_SEC}/Archives/edgar/daily-index/xbrl/companyfacts.zip"
-#  https://www.sec.gov/Archives/edgar/daily-index/bulkdata/submissions.zip
 URL_XBRL_COMPANY_SUBMISSIONS_ZIP = f"https://{HOST_WWW_SEC}/Archives/edgar/daily-index/xbrl/submissions.zip"
 
 # Save metadata
