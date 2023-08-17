@@ -1,4 +1,4 @@
-# EdgarClient 
+# SEC-Client 
 (TESTS ARE OUT OF DATE AND WILL BE UPDATED SOON, REFACTORING MERGER)
 
 **EdgarClient** provides a lightweight, unofficial Python API wrapper for
