@@ -1,4 +1,4 @@
-"""Unofficial SEC EDGAR API wrapper."""
+"""Unofficial SEC API wrapper."""
 import json
 import os
 import re
@@ -30,7 +30,7 @@ from logger import setup_logger
 logger = setup_logger(name="EdgarClient")
 
 
-class EdgarClient(BaseClient, DownloadFormManager):
+class SEC_Client(BaseClient, DownloadFormManager):
     """An :class:`EdgarClient` object.
 
     Header Defaults to the following:
@@ -515,7 +515,8 @@ class EdgarClient(BaseClient, DownloadFormManager):
             with Pool(number_of_cores) as p:
                 p.map(self._parse_open_json, json_files)
 
-    def parse_facts_json(self, json_dict):
+    @staticmethod
+    def parse_facts_json(json_dict):
         dataframes = []
 
         logger.info(f'Parsing {json_dict["entityName"]} facts')
@@ -595,6 +596,8 @@ class EdgarClient(BaseClient, DownloadFormManager):
 
 
 if __name__ == "__main__":
+    # TODO since moving towards using zip facts and forms expect when updating for the day or feeds then we should
+    #   refactor this class and reduce its complexity
     DOWNLOAD_FOLDER = "/home/ruben/PycharmProjects/Genie-Trader/Data/raw_data/SEC"
 
     # Create an EdgarClient instance
